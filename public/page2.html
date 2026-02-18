@@ -1,0 +1,23 @@
+<html>
+<head>
+
+<title>Page 2</title>
+
+</head>
+<body>
+<h1> Welcome to Page 2</h1>
+
+<p>Hits: <span id="counter">Loading...</span></p>
+
+<a href="/index.html">Back to Home</a></br>
+<a href="/page1.html"> Link to Page 1</a>
+
+<script>
+	fetch('hits/page2')
+		.then(response => response.json())
+		.then(data => {
+			document.getElementById('counter').textContent = data.hits;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Home</title>
+</head>
+
+<body>
+
+<h1>Home</h1>
+
+<p>Hits: <span id="counter">Loading...</span></p>
+
+<a href="/page1.html">Link to first page</a><br>
+<a href="/page2.html">Link to second page<a><br>
+
+<script>
+
+	fetch('/hits/index')
+		.then(response => response.json())
+		.then(data => {
+			document.getElementById('counter').textContent = data.hits;
+});
+</script>
+</body>
+</html>
